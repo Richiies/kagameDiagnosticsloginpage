@@ -20,7 +20,7 @@ export default function Home(props) {
             
             <h1>Login Successfull</h1>
             <p>Welcome to Kagame Diagnostics </p>
-            <LogoutButton />
+            <LogoutButton className = "logoutbtn"/>
         </div>
     )
 }

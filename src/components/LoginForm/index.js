@@ -1,5 +1,7 @@
 import Cookies from 'js-cookie'
 import {Component} from 'react'
+import {AiFillEye} from "react-icons/ai"
+import {RiEyeCloseFill} from "react-icons/ri"
 import './index.css'
 
 
@@ -10,6 +12,7 @@ class LoginForm extends Component {
     password: '',
     showSubmitError: false,
     errorMessage: '',
+    showPassword:false,
     
   }
 
@@ -57,21 +60,23 @@ class LoginForm extends Component {
   }
 
   renderPasswordField = () => {
-    const {password} = this.state
+    const {password, showPassword} = this.state
 
     return (
       <>
         <label className="input-label" htmlFor="password">
           PASSWORD <span className = "star">*</span>
         </label>
+        <div className = "password-container">
         <input
-          type="password"
+          type={showPassword? "password":"text"}
           id="password"
           className="password-input-field"
           value={password}
           onChange={this.onChangePassword}
           placeholder="Enter Password"
         />
+        <span className ="eyebtn"  type = "button" onClick = {()=> {this.setState(prevState=> ({showPassword: !prevState.showPassword}))}}>{showPassword?<RiEyeCloseFill />: <AiFillEye/>}</span></div>
       </>
     )
   }
@@ -92,6 +97,7 @@ class LoginForm extends Component {
           onChange={this.onChangeUsername}
           placeholder="Email"
         />
+        
       </>
     )
   }

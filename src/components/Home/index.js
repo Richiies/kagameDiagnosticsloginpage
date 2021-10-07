@@ -1,9 +1,9 @@
 import Cookies from 'js-cookie'
-import { BsFillHouseDoorFill } from "react-icons/bs";
 import { Redirect } from 'react-router-dom'
-import Header from '../Header'
+import LogoutButton from '../LogoutButton/LogoutButton'
 
 
+import "./index.css"
 
 
 export default function Home(props) {
@@ -16,8 +16,11 @@ export default function Home(props) {
 
     return (
         <div className="Home-container">
-            <Header  />
+          
+            
             <h1>Login Successfull</h1>
+            <p>Welcome to Kagame Diagnostics </p>
+            <LogoutButton />
         </div>
     )
 }

@@ -46,7 +46,8 @@
   
   @media screen and (min-width: 992px) {
     .login-image {
-      background-image: linear-gradient(0deg, rgba(61, 74, 98, 0.93), rgba(61, 74, 98, 0.93)) ; 
+      background-image: linear-gradient(0deg, rgba(61, 74, 98, 0.93), rgba(61, 74, 98, 0.93));
+      
       height: 666px;
       width: 60%;
       padding: 10px;

@@ -36,9 +36,19 @@ class LoginForm extends Component {
     event.preventDefault()
     const {Email, password} = this.state
     // console.log((Email.lastIndexOf('@gmail.com') === Email.length - '@gmail.com'.length))
-    if ((Email.lastIndexOf('@gmail.com') === Email.length - '@gmail.com'.length) && password.length >=6){
+    if (Email ==="" && password === ""){
+      this.onSubmitFailure("Please enter Email ending with @gmail.com and password")
+    }
+    else if ((Email.lastIndexOf('@gmail.com') === Email.length - '@gmail.com'.length) && password.length >=6){
+      const regex = /[A-Z]/gi ;
+      if (password.match(regex) && password.match(/(\d+)/)){
         console.log(password)
         this.onSubmitSuccess()
+      } else{
+        this.onSubmitFailure("type in format of letters and numbers ")
+
+      }
+        
 
     }
      else {
